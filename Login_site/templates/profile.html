@@ -1,0 +1,24 @@
+{% extends "index.html" %}
+{% block title %}Profile{% endblock title %}
+{% block body %}
+<div class="row d-flex justify-content-center align-items-center">
+    <div class="col-xl-4">
+        <div class="card mt-5" style="border-radius: 15px;">
+            <div class="card-body p-3">
+                <div class="card-header">
+                    Welcome <span style="text-transform:uppercase;">{{user}}!</span>
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">USERNAME: {{user.username}}</li>
+                    <li class="list-group-item">EMAIL: {{user.email}}</li>
+                </ul>
+                <div class="card-footer">
+                <a class="btn btn-light btn-block" href="logout" role="button"><i class="fas fa-sign-out-alt"></i>Logout</a>
+                </div>
+                </div>
+            </div>
+        </div>
+    <div>
+</div>
+
+{% endblock body %}

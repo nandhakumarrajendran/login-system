@@ -1,0 +1,42 @@
+body{
+    margin: 0;
+    background-color: #ffffff;
+    font-family: 'Times New Roman';
+}
+.topic{
+    margin:0px ;
+    padding: 1px;
+    text-align: center;
+    background-color: rgb(49, 51, 50);
+    color: white;
+}
+
+.nav{
+    margin-top: 0;
+    background-color: rgb(49, 51, 50);
+    font-size: large;
+}
+
+.container-home{
+    position:absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    padding: 20px;
+   
+}
+.nav{
+    margin: 0;
+    padding-top: 0;
+}
+.nav a{
+    color: white;
+}
+
+.nav a:hover{
+    color: rgb(115, 115, 228);
+}
+.card{
+    box-shadow: 5px 5px rgb(49, 51, 50);
+}
+

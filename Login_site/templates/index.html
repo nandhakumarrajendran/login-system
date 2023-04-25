@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{% endblock title %}</title>
+    {% load static %}
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <script src="https://kit.fontawesome.com/bc9da4dbd0.js" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+    <div class="topic">
+        <h1>Simple Login System Using Django</h1>
+    </div>
+    
+    <div>
+      <ul class="nav justify-content-end">
+      {% if not request.user.is_authenticated %}
+        <li class="nav-item">
+          <a class="nav-link active" href="login"><i class="fas fa-sign-in-alt"></i> Login</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="signup"><i class="fa-solid fa-user-plus"></i> Signup</a>
+        </li>
+      {% else %}
+      <div >
+        <li class="nav-item">
+          <a class="nav-link active" href="home"><i class="fas fa-home"></i> Home</a>
+        </li>
+      </div>  
+        <li class="nav-item">
+          <a class="nav-link active" href="profile"><i class="fa-solid fa-user"></i><span style="text-transform:uppercase;"> {{request.user}}</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="logout"><i class="fas fa-sign-out-alt"></i> Logout</a>
+        </li>
+      {% endif %}
+    </div>
+    
+    {% block body %}  {% endblock body %}
+    
+</body>
+
+</html>
